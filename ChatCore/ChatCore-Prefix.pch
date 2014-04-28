@@ -1,5 +1,7 @@
 #import <ChatCore/MVAvailability.h>
 
+#define ENABLE_SCRIPTING 0
+
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <TestFlightSDK/TestFlight.h>
