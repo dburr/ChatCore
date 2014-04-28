@@ -229,7 +229,7 @@ NSString *MVDCCFriendlyAddress( NSString *address ) {
 	NSNumber *port = [info objectForKey:@"port"];
 
 	if( ! [_connection connectToHost:host onPort:[port unsignedShortValue] error:NULL] ) {
-		DLog(@"can't connect to DCC %@ on port %d", host, [port unsignedShortValue] );
+		NSLog(@"can't connect to DCC %@ on port %d", host, [port unsignedShortValue] );
 		return;
 	}
 }

@@ -4157,10 +4157,10 @@ end:
 - (void) _handleErrorWithParameters:(NSArray *) parameters fromSender:(id) sender { // ERROR message: http://tools.ietf.org/html/rfc2812#section-3.7.4
 	MVAssertCorrectThreadRequired( _connectionThread );
 
-	DLog(@"ERROR parameter count: %d.", parameters.count);
+	NSLog(@"ERROR parameter count: %d.", parameters.count);
 
 	if( parameters.count == 1 ) {
-		DLog(@"0: %@", [self _stringFromPossibleData:[parameters objectAtIndex:0]]);
+		NSLog(@"0: %@", [self _stringFromPossibleData:[parameters objectAtIndex:0]]);
 	}
 }
 */

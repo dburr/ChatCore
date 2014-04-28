@@ -1,0 +1,72 @@
+//
+// Prefix header for all source files of the 'Nosillacast' target in the 'Nosillacast' project
+//
+
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <TestFlightSDK/TestFlight.h>
+
+#define NSStringFromBOOL(b) (b ? @"YES" : @"NO")
+
+#define ENABLE(FEATURE) (defined(ENABLE_##FEATURE) && ENABLE_##FEATURE)
+#define SYSTEM(NAME) (defined(SYSTEM_##NAME) && SYSTEM_##NAME)
+
+#define LIKELY(x) __builtin_expect((x) ? 1 : 0, 1)
+#define UNLIKELY(x) __builtin_expect((x) ? 1 : 0, 0)
+
+#define SYSTEM_IOS 1
+
+#if TARGET_IPHONE_SIMULATOR
+#define SYSTEM_IOS_SIMULATOR 1
+#endif
+
+#if !defined(__IPHONE_3_2)
+#define __IPHONE_3_2 30200
+#endif
+
+#if !defined(__IPHONE_4_0)
+#define __IPHONE_4_0 40000
+#endif
+
+#undef __IPHONE_OS_VERSION_MIN_REQUIRED
+#define __IPHONE_OS_VERSION_MIN_REQUIRED __IPHONE_3_1
+
+#ifdef __OBJC__
+
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import <UIKit/UIKit.h>
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED <= __IPHONE_3_1
+@class UILongPressGestureRecognizer;
+@class UIPopoverController;
+@class UISplitViewController;
+
+@protocol UIPopoverControllerDelegate
+@end
+
+@protocol UISplitViewControllerDelegate
+@end
+#endif
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED <= __IPHONE_4_0
+@class UILocalNotification;
+#endif
+
+#endif
+
+#if !defined(__unsafe_unretained)
+#define objc_unretainedObject(object) (id)(object)
+#endif
+
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+        #import <Foundation/Foundation.h>
+#endif

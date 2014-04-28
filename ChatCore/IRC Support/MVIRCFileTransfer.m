@@ -115,7 +115,7 @@
 }
 
 - (void) directClientConnection:(MVDirectClientConnection *) connection willDisconnectWithError:(NSError *) error {
-	DLog(@"upload DCC willDisconnectWithError: %@", error );
+	NSLog(@"upload DCC willDisconnectWithError: %@", error );
 	if( [self status] != MVFileTransferDoneStatus && [self status] != MVFileTransferStoppedStatus )
 		[self _setStatus:MVFileTransferErrorStatus];
 }
@@ -331,7 +331,7 @@
 }
 
 - (void) directClientConnection:(MVDirectClientConnection *) connection willDisconnectWithError:(NSError *) error {
-	DLog(@"download DCC willDisconnectWithError: %@", error );
+	NSLog(@"download DCC willDisconnectWithError: %@", error );
 	if( [self status] != MVFileTransferDoneStatus && [self status] != MVFileTransferStoppedStatus )
 		[self _setStatus:MVFileTransferErrorStatus];
 }

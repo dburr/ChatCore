@@ -230,7 +230,7 @@ NSString *MVDirectChatConnectionErrorDomain = @"MVDirectChatConnectionErrorDomai
 }
 
 - (void) directClientConnection:(MVDirectClientConnection *) connection willDisconnectWithError:(NSError *) error {
-	DLog(@"DCC chat willDisconnectWithError: %@", error );
+	NSLog(@"DCC chat willDisconnectWithError: %@", error );
 	if( error ) [self _postError:error];
 }
 
