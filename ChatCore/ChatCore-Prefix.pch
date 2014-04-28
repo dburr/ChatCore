@@ -1,6 +1,12 @@
 #import <ChatCore/MVAvailability.h>
 
 #define ENABLE_SCRIPTING 0
+#define ENABLE_PLUGINS 0
+#define ENABLE_ICB 0
+#define ENABLE_IRC 1
+#define ENABLE_SILC 0
+#define ENABLE_XMPP 0
+#define USE_ATTRIBUTED_CHAT_STRING 0
 
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <MobileCoreServices/MobileCoreServices.h>
